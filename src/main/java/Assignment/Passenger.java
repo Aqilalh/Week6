@@ -1,16 +1,20 @@
 package Assignment;
 
-public class Passenger {
+public class Passenger extends Person {
     private Ticket ticket;
     private String [] luggage;
     private double creditCardLimit;
 
-    public Passenger(Ticket ticket, double creditCardLimit,String[] luggage) {
+    public Passenger(String name) {
+        super(name);
+    }
+
+    public Passenger(String name, Ticket ticket, String[] luggage, double creditCardLimit) {
+        super(name);
         this.ticket = ticket;
         this.luggage = luggage;
         this.creditCardLimit = creditCardLimit;
     }
-
 
     public Ticket getTicket() {
         return ticket;
@@ -30,7 +34,7 @@ public class Passenger {
 
 
     public String[] getLuggage() {
-        return luggage;
+        return this.luggage;
     }
 
     public void setLuggage(String[] luggage) {
@@ -41,6 +45,6 @@ public class Passenger {
         return luggage.length;
     };
     public void printTicket(){
-
+        System.out.println(this.ticket);
     };
 }

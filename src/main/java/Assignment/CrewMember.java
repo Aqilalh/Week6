@@ -1,10 +1,27 @@
 package Assignment;
 
-public class CrewMember extends Person implements ServAble{
+public class CrewMember extends Person implements ServAble,Payable{
+    public FlightCrewJob getJob() {
+        return job;
+    }
+
+    public void setJob(FlightCrewJob job) {
+        this.job = job;
+    }
+
+    private FlightCrewJob job;
+    private float salary;
+
+    public CrewMember(String name, FlightCrewJob job, float salary) {
+        super(name);
+        this.job = job;
+        this.salary = salary;
+    }
+
     public CrewMember(String name) {
         super(name);
     }
-private FlightCrewJob job;
+
     public float getSalary() {
         return salary;
     }
@@ -13,7 +30,7 @@ private FlightCrewJob job;
         this.salary = salary;
     }
 
-    private float salary;
+
 
     @Override
     public String toString() {
@@ -25,5 +42,11 @@ private FlightCrewJob job;
     @Override
     public void serve(Person person) {
 
+        System.out.println("Now serving " + person.getName());
+    }
+
+    @Override
+    public void printPaymentAmount() {
+        System.out.println(salary);
     }
 }

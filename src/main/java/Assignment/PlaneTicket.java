@@ -9,6 +9,6 @@ protected boolean isFrequesntFlyer;
 
     @Override
     public void printPaymentAmount() {
-
+        System.out.println(getPrice());
     }
 }
